@@ -11,6 +11,42 @@ def hash_code(s, salt='myweb'):
     h.update(s.encode())
     return h.hexdigest()
 
+def send_email(email, code):
+    subject = "Verification Email"
+    text_content = "This is an email from {}".format(settings.EMAIL_HOST_USER)
+    html_content = '''<p>Welcome to visit <a href="http://{}/confirm/?code={}" target=blank>www.localhost.com</a> to valid.</p>
+                    '''.format('127.0.0.1:8000', code)
+    msg = EmailMultiAlternatives(subject, text_content, settings.EMAIL_HOST_USER, [email])
+    msg.attach_alternative(html_content, "text/html")
+    msg.send()
+
+def make_confirm_string(user):
+    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    code = hash_code(user.name, now)
+    models.ConfirmString.objects.create(code=code, user=user,)
+    return code
+
+def user_confirm(request):
+    code = request.GET.get('code', None)
+    message = ''
+    try:
+        confirm = models.ConfirmString.objects.get(code=code)
+    except:
+        message = 'invalid!'
+        return render(request, 'login/confirm.html', locals())
+    c_time = confirm.c_time
+    now = datetime.datetime.now()
+    if now > c_time + datetime.timedelta(settings.CONFIRM_DAYS):
+        confirm.user.delets()
+        message = 'Your email is out of time'
+        return render(request, 'login/confirm.html', locals())
+    else:
+        confirm.user.has_confirmed = True
+        confirm.user.save()
+        confirm.delete()
+        message = 'Thank you for your register.'
+        return render(request, 'login/login.html', locals())
+
 def login(request):
     if request.session.get('is_login', None):
         return redirect('/index/')
@@ -96,39 +132,4 @@ def register(request):
     register_form = forms.RegisterForm()
     return render(request, 'login/register.html', locals())
 
-def user_confirm(request):
-    code = request.GET.get('code', None)
-    message = ''
-    try:
-        confirm = models.ConfirmString.objects.get(code=code)
-    except:
-        message = 'invalid!'
-        return render(request, 'login/confirm.html', locals())
-    c_time = confirm.c_time
-    now = datetime.datetime.now()
-    if now > c_time + datetime.timedelta(settings.CONFIRM_DAYS):
-        confirm.user.delets()
-        message = 'Your email is out of time'
-        return render(request, 'login/confirm.html', locals())
-    else:
-        confirm.user.has_confirmed = True
-        confirm.user.save()
-        confirm.delete()
-        message = 'Thank you for your register.'
-        return render(request, 'login/login.html', locals())
 
-def make_confirm_string(user):
-    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    code = hash_code(user.name, now)
-    models.ConfirmString.objects.create(code=code, user=user,)
-    return code
-
-
-def send_email(email, code):
-    subject = "Verification Email"
-    text_content = "This is an email from {}".format(settings.EMAIL_HOST_USER)
-    html_content = '''<p>Welcome to visit <a href="http://{}/confirm/?code={}" target=blank>www.localhost.com</a> to valid.</p>
-                    '''.format('127.0.0.1:8000', code)
-    msg = EmailMultiAlternatives(subject, text_content, settings.EMAIL_HOST_USER, [email])
-    msg.attach_alternative(html_content, "text/html")
-    msg.send()
