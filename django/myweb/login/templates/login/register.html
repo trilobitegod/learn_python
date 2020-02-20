@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="{% static 'login/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'login/register.css' %}" rel="stylesheet">
+    <title>login page</title>
+</head>
+<body>
+<div class="container">
+    <div class="col">
+        <form class="form-register" action="/register/" method="post">
+            <div class="myalert">
+                {% if register_form.captcha.errors %}
+                    <div class="myalerts">{{ register_form.captcha.errors }}</div>
+                {% elif message %}
+                    <div class="myalerts">{{ message }}</div>
+                {% endif %}
+            </div>
+            {% csrf_token %}
+            <h3 class="text-center">Welcome to register!</h3>
+            {% for field in register_form %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+                    {{ field }}
+                </div>
+            {% endfor %}
+            <div>
+                <a href="/login/"><ins>Login directly</ins></a>
+                <button type="submit" class="btn btn-primary float-right">Register</button>
+            </div>
+        </form>
+    </div>
+</div>
+{# below order fixed #}
+<script src="{% static 'login/jquery-3.4.1.js' %}"></script>
+<script src="{% static 'login/popper.js' %}"></script>
+<script src="{% static 'login/bootstrap.min.js' %}"></script>
+</body>
+</html>
