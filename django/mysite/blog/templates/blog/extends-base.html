@@ -1,0 +1,19 @@
+{% extends "blog/base.html" %}
+
+{% load blog_extras %}
+
+{% block title %}
+    My amazing blog
+{% endblock %}
+
+{% block content %}
+    {% for key, value in forms.items %}
+    <h1>{{ key }}: {{ value }}</h1>
+    {% endfor %}
+    {{ data|default:"3 &lt; 2" }}
+
+<p>3 &lt; 2</p>
+<p>{{ forms.name|cut:"Y" }}</p>
+<p>The time is {% current_time "%Y-%m-%d %I:%M %p" %}</p>
+{% show_results forms %}
+{% endblock %}

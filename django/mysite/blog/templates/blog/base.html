@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load blog_extras %}
+    <meta charset="UTF-8">
+    <title>{% block title %}My amazing site{% endblock %}</title>
+
+</head>
+<body>
+<div id="sidebar">
+    {% block sidebar %}
+    <ul>
+        <li><a href="/blog/">Blog Home</a> </li>
+        <li><a href="/blog/form/">Blog Form</a> </li>
+    </ul>
+    {% endblock %}
+</div>
+<div id="content">
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+</html>
