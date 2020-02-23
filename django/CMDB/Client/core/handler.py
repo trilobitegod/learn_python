@@ -57,7 +57,7 @@ class ArgvHandler(object):
             # 使用Python内置的urllib.request库，发送post请求。
             # 需要先将数据进行封装，并转换成bytes类型
             data_encode = urllib.parse.urlencode(data).encode()
-            response = urllib.requests.urlopen(url=url, data=data_encode, timeout=settings.Params['request_timeout'])
+            response = urllib.request.urlopen(url=url, data=data_encode, timeout=settings.Params['request_timeout'])
             print("\033[31;1m发送完毕！\033[0m ")
             message = response.read().decode()
             print("返回结果：%s" % message)

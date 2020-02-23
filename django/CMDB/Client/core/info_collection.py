@@ -23,7 +23,7 @@ class InfoCollection(object):
     @staticmethod
     def windows():
         from plugins.collect_windows_info import Win32Info
-        return Win32Info()
+        return Win32Info().collect()
 
     @staticmethod
     def build_report_data(data):

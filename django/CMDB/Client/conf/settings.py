@@ -4,9 +4,9 @@ import os
 
 
 Params = {
-    'server': '127.0.0.1',
-    'port': '3306',
-    'url': '/assets/report',
+    'server': '192.168.43.40',
+    'port': '8000',
+    'url': '/assets/report/',
     'request_timeout': 30,
 }
 
