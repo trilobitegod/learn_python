@@ -1,0 +1,76 @@
+************学习路径***************
+主要还是注重于数据分析，web开发不用掌握很深入(django)
+	https://www.zhihu.com/question/29138020
+	https://zhuanlan.zhihu.com/p/25761248
+	https://zhuanlan.zhihu.com/fengdu78
+	https://zhuanlan.zhihu.com/p/447105858
+	https://zhuanlan.zhihu.com/p/22619956
+	scipy和matplotlib学完后，对numpy, pandas, scipy, matplotlib复习总结，再进行机器学习内容
+
+
+******** 深度学习 ********
+	TF考试，https://mp.weixin.qq.com/s/EFvsPRFnSksHwBpgJyJIPA
+	吴恩达笔记：http://www.ai-start.com/dl2017/
+
+******** 机器学习 ********
+	吴恩达和李航学习相关理论
+	
+	综合网站：	http://www.ai-start.com/
+	Scikit-Learn:	https://sklearn.apachecn.org/docs/0.21.3/, https://morvanzhou.github.io/tutorials/machine-learning/sklearn/
+	莫烦教程
+	吴恩达笔记：http://www.ai-start.com/ml2014/, https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes
+	李航代码复现：	https://mp.weixin.qq.com/s/71w0IN3gAYWxrKVM_lcYrQ, https://github.com/fengdu78/lihang-code
+
+	吴恩达笔记：https://zhuanlan.zhihu.com/fengdu78
+	github:		https://github.com/nndl/nndl.github.io
+
+
+******** 数据科学 ********
+数据科学主要是numpy,pandas,SQL等库的学习，还有传统的机器学习
+	https://github.com/lijin-THU/notes-python
+	SQL 廖雪峰网站，w3schools, 菜鸟
+	数据科学学习路径 https://zhuanlan.zhihu.com/p/22619956, 
+	如何正确学习数据科学 https://www.chainnews.com/articles/695249386016.htm
+		numpy:	https://www.runoob.com/numpy/numpy-tutorial.html
+				https://github.com/rougier/numpy-100
+				https://www.w3resource.com/python-exercises/numpy/index.php
+		pandas:	https://www.yiibai.com/pandas
+				https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html
+				知乎收藏https://www.zhihu.com/people/ttift
+		scipy:	http://scipy-lectures.org/
+				https://www.qikegu.com/docs/3479
+				https://wizardforcel.gitbooks.io/scipy-lecture-notes/4.html
+				https://www.tutorialspoint.com/scipy/index.htm
+				https://nbviewer.jupyter.org/github/lijin-THU/notes-python/tree/master/04-scipy/
+		matplotlib:	https://www.chainnews.com/articles/695249386016.htm
+					https://www.qikegu.com/docs/3614
+		Mayavi	:	https://scipy-lectures.org/packages/3d_plotting/index.html
+					https://zhuanlan.zhihu.com/p/28077015
+	复习:	https://nbviewer.jupyter.org/github/lijin-THU/notes-python/blob/master/index.ipynb
+			numpy中文文档	https://www.numpy.org.cn/deep/
+			pandas:	https://nbviewer.jupyter.org/github/cs109/2014/blob/master/homework/HW1.ipynb
+			scipy:	http://scipy-lectures.org/intro/scipy.html
+			matplotlib 	https://nbviewer.jupyter.org/github/jrjohansson/scientific-python-lectures/blob/master/Lecture-4-Matplotlib.ipynb
+			kaggle: 找几个感兴趣的题目，阅读已完成的代码
+
+
+******** Web开发 ********
+web开发，包括html,css,jacascript, jQuery, ***SQL***, Django, 
+	https://www.w3school.com.cn/
+	css两个最重要的基本属性：diaplay和position，http://www.ruanyifeng.com/blog/2019/11/css-position.html
+	布局实例：https://coolshell.cn/articles/6840.html（中文），
+	https://www.jotform.com/blog/css-layouts-40-tutorials-tips-demos-and-best-practices/（英文）
+	精细功能（熟练掌握布局后），http://www.softwhy.com/daima/
+	django https://www.w3cschool.cn/django/, https://www.liujiangblog.com/
+	django练习项目 https://github.com/gnemoug/ComPerformance (非常好的一个项目)
+		2020.02.20-02.29 完成下面三个网址的 django 项目，后学数据分析
+		https://www.liujiangblog.com/course/django/
+		https://blog.csdn.net/weixin_42134789/article/details/83384264
+		https://stormsha.com/tag/Django/
+
+
+******** python基础 ********
+	https://zhuanlan.zhihu.com/p/98459902，
+	github learn python in 100 days!
+	廖雪峰学python, https://www.liaoxuefeng.com/wiki/1016959663602400
+
